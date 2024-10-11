@@ -2,7 +2,7 @@
   <div id="app">
     <input class="search-input"
            :value="searchValue"
-           @change="onChange" />
+           @input="onChange" />
     <div class="dropdown-list">
       <div class="list-item"
            v-for="item in listData"
@@ -32,13 +32,9 @@
     methods: {
       onChange(e) {
         console.log('onchange');
-        console.log(e.target.value);
-        this.searchValue = e.target.value;
+        this.searchValue = e.target.value; // 更新输入框内容
 
-
-
-        console.log('listData', this.listData);
-
+        // 筛除下拉列表的内容
         const temp = this.originListData.filter(item => {
           if (item.includes(this.searchValue)) {
             return true // 留下
