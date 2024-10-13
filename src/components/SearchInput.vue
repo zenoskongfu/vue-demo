@@ -1,8 +1,8 @@
 <template>
   <div class="search-input-container">
     <input class="search-input"
-           :value="searchValue"
-           @change="onChange" />
+           v-model="searchValue"
+           @input="onChange" />
     <div class="dropdown-list">
       <div class="list-item"
            v-for="item in listData"
@@ -36,7 +36,8 @@
       onChange(e) {
         console.log('onchange');
         console.log(e.target.value);
-        this.searchValue = e.target.value;
+        // this.searchValue = e.target.value;
+        // console.log('this.searchValue: ', this.searchValue);
 
         console.log('listData', this.listData);
 
