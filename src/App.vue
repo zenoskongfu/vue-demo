@@ -1,55 +1,32 @@
 <template>
   <div id="app">
-    <input class="search-input"
-           :value="searchValue"
-           @change="onChange" />
-    <div class="dropdown-list">
-      <div class="list-item"
-           v-for="item in listData"
-           :key="item">{{ item }}</div>
-    </div>
+    <SearchInput></SearchInput>
+    <SearchInput></SearchInput>
+
+    <el-input placeholder="请输入内容"
+              v-model="input">
+    </el-input>
   </div>
 </template>
 
 <script>
+  // 引入
+  import SearchInput from './components/SearchInput.vue';
+
+
   export default {
     name: 'App',
+    // 局部注册
+    components: {
+      SearchInput
+    },
     data() {
       return {
-        searchValue: '',
-        listData: [
-          'apple',
-          'peach',
-          'banana'
-        ],
-        originListData: [
-          'apple',
-          'peach',
-          'banana'
-        ]
+        input: ''
       }
     },
     methods: {
-      onChange(e) {
-        console.log('onchange');
-        console.log(e.target.value);
-        this.searchValue = e.target.value;
 
-
-
-        console.log('listData', this.listData);
-
-        const temp = this.originListData.filter(item => {
-          if (item.includes(this.searchValue)) {
-            return true // 留下
-          }
-          return false // 不留下
-        })
-
-        console.log('temp: ', temp);
-
-        this.listData = temp;
-      }
     }
   }
 </script>
