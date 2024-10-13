@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <SearchInput></SearchInput>
-    <SearchInput></SearchInput> -->
 
     <el-input placeholder="请输入内容"
               v-model="inputValue"
