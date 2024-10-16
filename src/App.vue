@@ -1,31 +1,22 @@
 <template>
   <div id="app">
-
-    <el-input placeholder="请输入内容"
-              v-model="inputValue"
-              clearable
-              show-password
-              prefix-icon="el-icon-date">
-    </el-input>
-
-    <el-autocomplete class="inline-input"
-                     v-model="inputValue2"
-                     :fetch-suggestions="querySearch"
-                     placeholder="请输入内容"
-                     @select="handleSelect"></el-autocomplete>
+<SearchElementUIDemo></SearchElementUIDemo>
   </div>
+
 </template>
 
 <script>
-  // 引入
-  // import SearchInput from './components/SearchInput.vue';
+import SearchElementUIDemo from './components/SearchElementUIDemo.vue';
 
+console.log('test log');
 
   export default {
     name: 'App',
     // 局部注册
     components: {
       // SearchInput
+      // SelectDemo
+      SearchElementUIDemo
     },
     data() {
       return {
@@ -88,36 +79,7 @@
 
 <style>
   #app {
-    width: fit-content;
-    margin: 0 auto;
-    margin-top: 10vh;
-  }
-
-  .search-input {
-    width: 300px;
-    height: 40px;
-
-    font-size: 20px;
-  }
-
-  .dropdown-list {
-    box-shadow: 0 0 4px 0px lightgray;
-    border-radius: 4px;
-    padding: 4px;
-    width: 300px;
-
-    margin-top: 10px;
-  }
-
-  .list-item {
-    border-bottom: 1px solid gray;
-    height: 35px;
-
-    text-align: center;
-    line-height: 35px;
-  }
-
-  .list-item:last-child {
-    border-bottom: none;
+    width:100vw;
+    height: 100vh;
   }
 </style>
