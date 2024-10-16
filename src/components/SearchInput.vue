@@ -12,6 +12,9 @@
 </template>
 
 <script>
+/**
+ * 这个文件是手写的的搜索下拉框的demo
+*/
   export default {
     // 给组件取个名字
     name: 'SearchInput',
