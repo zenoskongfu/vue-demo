@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 请求一个后端路径
+        // fetch("http://localhost:3000/api/customer-types",{
+        //     method:"POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body:JSON.stringify({
+        //         bankId:1
+        //     })
+        // });
+
+        // fetch 是js原生方法，axios是第三方库
+        // fetch 和 axios 都可以发送请求，但是axios更强大
+        fetch("http://localhost:3000/api/customer-types?bankId=1")
+        .then(res=>res.json()) // 将响应体转换为json对象
+        .then(data=>{
+            console.log("data",data);
+            const types = data.data;
+            console.log("types",types);
+
+            // 将types数组中的每个元素转换为div标签，并添加到body中
+            document.body.innerHTML = types.map(type=>{
+                return `<div>${type.type}</div>`;
+            }).join("");
+        });
+
+
+    </script>
+</body>
+</html>
