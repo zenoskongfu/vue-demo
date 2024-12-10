@@ -12,11 +12,7 @@
 </template>
 
 <script>
-// import { staticOptions } from "./config"; // 重命名
 import { getBankList, getCustomerType } from "@/api/bank.js";
-// import { getAxios, postAxios } from "../util/httpAxios.js";
-// import axios from "axios";
-// [{label: "工商银行", value: 1}, {label: "农业银行", value: 2}]
 
 export default {
 	data() {
@@ -47,7 +43,7 @@ export default {
 		getBankList().then((res) => {
 			console.log("getData: ", res.data);
 			const bankData = res.data.data;
-			this.options = bankData.map((item)=>{
+			this.options = bankData.map((item) => {
 				return {
 					label: item.name,
 					value: item.id,

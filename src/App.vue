@@ -1,23 +1,17 @@
 <template>
 	<div id="app">
-		<CustomSelect></CustomSelect>
+		<List />
 	</div>
 </template>
 
 <script>
-// 引入
-import CustomSelect from "./components/CustomSelect.vue";
+import List from "./components/TestDetail/ListDemo.vue";
 
 export default {
 	name: "App",
-	// 局部注册
 	components: {
-		CustomSelect,
+		List,
 	},
-	data() {
-		return {};
-	},
-	methods: {},
 };
 </script>
 
